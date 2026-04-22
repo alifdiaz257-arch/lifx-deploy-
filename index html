@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Deployer | Deploy Mudah ke Vercel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background dengan efek grain -->
+    <div class="noise"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">⚡ VercelDeployer</div>
+            <div class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#features">Fitur</a>
+                <a href="#howto">Cara Pakai</a>
+                <a href="#api">API</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glow-title">
+                <span class="title-line">Deploy ke</span>
+                <span class="title-line gradient-text">Vercel</span>
+                <span class="title-line">Semudah</span>
+                <span class="title-line">Klik Tombol</span>
+            </h1>
+            <p class="hero-subtitle">Platform deploy otomatis untuk project React, Next.js, Vue, dan static site lainnya</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="getStartedBtn">🚀 Mulai Sekarang</button>
+                <button class="btn btn-secondary" id="howToUseBtn">📖 Cara Pakai</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">✨ Fitur Unggulan</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Deploy Instan</h3>
+                    <p>Proses deploy hanya butuh beberapa detik, langsung dapatkan URL preview</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Domain Custom</h3>
+                    <p>Gunakan domain sendiri dengan mudah, lengkap SSL otomatis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Auto Deploy</h3>
+                    <p>Integrasi GitHub, setiap push otomatis deploy ke production</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Multi Framework</h3>
+                    <p>Support Next.js, React, Vue, Angular, Svelte, dan static HTML</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Edge Network</h3>
+                    <p>Deploy ke 100+ lokasi server di seluruh dunia</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Preview Deploy</h3>
+                    <p>Setiap pull request otomatis dibuatkan preview URL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cara Pakai Section -->
+    <section id="howto" class="howto">
+        <div class="container">
+            <h2 class="section-title">📋 Cara Pakai</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Persiapan Project</h3>
+                        <p>Siapkan folder project Anda. Pastikan ada file index.html untuk static site, atau package.json untuk framework JS.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Upload ke Vercel</h3>
+                        <p>Klik tombol di bawah atau drag & drop folder project ke dashboard Vercel.</p>
+                        <button class="btn-deploy" id="deployBtn">⬆️ Deploy Sekarang</button>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Dapatkan URL</h3>
+                        <p>Vercel akan otomatis memproses dan memberikan URL project Anda (nama-project.vercel.app).</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Pasang Domain Sendiri</h3>
+                        <p>Di dashboard Vercel > Project Settings > Domains, tambahkan domain custom Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section untuk Deploy Hook -->
+    <section id="api" class="api-section">
+        <div class="container">
+            <h2 class="section-title">🔗 Deploy via API (Deploy Hook)</h2>
+            <div class="api-card">
+                <p class="api-desc">Gunakan URL Deploy Hook untuk trigger deploy otomatis dari website Anda.</p>
+                <div class="api-url-container">
+                    <input type="text" id="deployHookUrl" placeholder="Masukkan URL Deploy Hook dari Vercel" class="api-input">
+                    <button id="triggerDeployBtn" class="btn-trigger">▶️ Trigger Deploy</button>
+                </div>
+                <div id="deployStatus" class="deploy-status"></div>
+                <div class="api-info">
+                    <p>💡 <strong>Cara dapatkan Deploy Hook:</strong></p>
+                    <ol>
+                        <li>Buka dashboard Vercel → Project Anda</li>
+                        <li>Settings → Deploy Hooks</li>
+                        <li>Buat hook baru untuk branch (main/master)</li>
+                        <li>Copy URL-nya dan tempelkan di atas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>⚡ VercelDeployer | Buat deploy Vercel jadi lebih mudah</p>
+            <p class="footer-small">© 2024 - Platform deploy otomatis untuk developer</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
